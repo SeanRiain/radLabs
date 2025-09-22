@@ -9,8 +9,13 @@ namespace Rad301_2025_Week1_Lab1
     public class Category
     {
         int CategoryID;
-        int Description;
+        string Description;
 
+        public Category(int CategorysID, string CategorysDescription)
+        {
+            CategoryID = CategorysID;
+            Description = CategorysDescription;
+        }
         //List<Product> ProductsC;
     }
     public class Product
@@ -55,35 +60,50 @@ namespace Rad301_2025_Week1_Lab1
         int SupplierID;
         int ProductID;
         DateTime DateFirstSupplied;
+
+        public SupplierProduct(int SuppliersID, int ProductsID, DateTime TheDateFirstSupplied)
+        {
+            SupplierID = SuppliersID;
+            ProductID = ProductsID;
+            DateFirstSupplied = TheDateFirstSupplied;
+        }
     }
 
     internal class ProductModel
     {
-        Category ProductCategory;
-        Supplier ProductSupplier;
+        public static void Main(String[] args)
+        {
+            Category ProductCategory;
+            Supplier ProductSupplier;
 
-        List<Product> Products;
-        List<Supplier> Suppliers;
-        List<Category> Categories;
-
-        Supplier Supplier1 = Supplier(1, "ACME", "Collooney", "Sligo");
-        Supplier Supplier2 = Supplier(1, "ACME", "Collooney", "Sligo");
-
-        Product Product1 = Product(1, "9 Inch Nails", 200, 0.1, 1);
-        Product Product2 = Product(2, "9 Inch Bolts", 120, 0.2, 1);
-        Product Product3 = Product(3, "Chimney Hoover", 10, 100.30, 2);
-        Product Product4 = Product(4, "Washing Machine", 7, 399.50, 2);
-
-        Category Category1 = Category(1, "Hardware");
-        Category Category2 = Category(2, "Electrical Appliances");
-
-        SupplierProduct SP1 = SupplierProduct(1, 1, 12 / 12 / 2012);
-        SupplierProduct SP2 = SupplierProduct(1, 2, 13 / 08 / 2017);
-        SupplierProduct SP3 = SupplierProduct(1, 3, 09 / 09 / 2022);
-        SupplierProduct SP4 = SupplierProduct(1, 4, 11 / 04 / 2024);
+            List<Supplier> Suppliers = new List<Supplier>();
+            List<Product> Products = new List<Product>();
+            List<Category> Categories = new List<Category>();
+            List<SupplierProduct> SupplierProducts = new List<SupplierProduct>();
 
 
 
+            Supplier Supplier1 = new Supplier(1, "ACME", "Collooney", "Sligo");
+            Supplier Supplier2 = new Supplier(1, "ACME", "Collooney", "Sligo");
 
+            Product Product1 = new Product(1, "9 Inch Nails", 200, 0.1f, 1);
+            Product Product2 = new Product(2, "9 Inch Bolts", 120, 0.2f, 1);
+            Product Product3 = new Product(3, "Chimney Hoover", 10, 100.30f, 2);
+            Product Product4 = new Product(4, "Washing Machine", 7, 399.50f, 2);
+
+            Category Category1 = new Category(1, "Hardware");
+            Category Category2 = new Category(2, "Electrical Appliances");
+
+            SupplierProduct SP1 = new SupplierProduct(1, 1, new DateTime(12, 12, 2012));
+            SupplierProduct SP2 = new SupplierProduct(1, 2, new DateTime(13, 08, 2017));
+            SupplierProduct SP3 = new SupplierProduct(1, 3, new DateTime(09, 09, 2022));
+            SupplierProduct SP4 = new SupplierProduct(1, 4, new DateTime(11, 04, 2024));
+
+            Suppliers.Add(Supplier1); Suppliers.Add(Supplier2);
+            Products.Add(Product1); Products.Add(Product2); Products.Add(Product3); Products.Add(Product4);
+            Categories.Add(Category1); Categories.Add(Category2);
+            SupplierProducts.Add(SP1); SupplierProducts.Add(SP2); SupplierProducts.Add(SP3); SupplierProducts.Add(SP4);
+
+        }
     }
 }
