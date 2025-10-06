@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rad301-2025-Week1-Lab1", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rad301-2025-Week2-Lab2", "Rad301-2025-Week2-Lab2\Rad301-2025-Week2-Lab2.csproj", "{5825AD91-EE84-49C5-8D9E-E005CF7F8541}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2secondProject", "Lab2secondProject\Lab2secondProject.csproj", "{8EBEC73B-5344-443C-9027-F33EEF3442B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5825AD91-EE84-49C5-8D9E-E005CF7F8541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5825AD91-EE84-49C5-8D9E-E005CF7F8541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5825AD91-EE84-49C5-8D9E-E005CF7F8541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBEC73B-5344-443C-9027-F33EEF3442B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBEC73B-5344-443C-9027-F33EEF3442B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBEC73B-5344-443C-9027-F33EEF3442B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBEC73B-5344-443C-9027-F33EEF3442B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
