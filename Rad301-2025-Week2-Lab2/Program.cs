@@ -14,6 +14,9 @@ todoItems.MapGet("/", async (TodoDb db) =>
 todoItems.MapGet("/complete", async (TodoDb db) =>
     await db.Todos.Where(t => t.IsComplete).ToListAsync());
 
+todoItems.MapGet("/priority/{pid}", async (int pid, TodoDb db) =>
+    await db.Todos.Where(t => t.Priority.Equals(pid)).ToListAsync());
+
 todoItems.MapGet("/{id}", async (int id, TodoDb db) =>
     await db.Todos.FindAsync(id)
         is ToDo todo

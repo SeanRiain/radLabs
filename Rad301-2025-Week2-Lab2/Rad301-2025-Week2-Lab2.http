@@ -5,22 +5,31 @@ POST {{HostAddress}}/todoitems
 Content-Type: application/json
 
 {
-   "name":"GO CLASS",
-   "isComplete":true
+   "name":"test",
+   "isComplete":false,
+   "Priority": 12
 }
 
 ###
 
-GET {{HostAddress}}/todoitems
+
+GET {{HostAddress}}/todoitems/complete //This is the first
+
+####
+
+GET {{HostAddress}}/todoitems/priority/12 //This is the first
+
+####
+GET {{HostAddress}}/todoitems //This is the first
 
 ###
 
-@id=0
-GET {{HostAddress}}/todoitems/{{1}}
+@id=1
+GET {{HostAddress}}/todoitems/{{id}} //This is the third Get Endpoint
 
 ###
 
-PUT {{HostAddress}}/todoitems/{{1}}
+PUT {{HostAddress}}/todoitems/{{id}}
 Content-Type: application/json
 
 {
@@ -31,6 +40,6 @@ Content-Type: application/json
 
 ###
 
-DELETE {{HostAddress}}/todoitems/{{1}}
+DELETE {{HostAddress}}/todoitems/{{id}}
 
 ###
