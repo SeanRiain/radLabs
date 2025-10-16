@@ -7,15 +7,17 @@ namespace Lab3.Controllers
     {
         // 
         // GET: /HelloWorld/
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            return View();
         }
         // 
         // GET: /HelloWorld/Welcome/ 
-        public string Welcome(string name, int ID = 1)
+        public IActionResult Welcome(string name, int id = 1)
         {
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+            ViewData["Message"] = "Hello " + name;
+            ViewData["id"] = id;
+            return View();
         }
     }
 }
