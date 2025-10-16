@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2secondProject", "Lab2se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{C919F299-F5E9-456C-8344-82199A9FC5B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{C673A89A-F507-4354-883D-8EEE04DDA5FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C919F299-F5E9-456C-8344-82199A9FC5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C919F299-F5E9-456C-8344-82199A9FC5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C919F299-F5E9-456C-8344-82199A9FC5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
