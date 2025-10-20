@@ -2,7 +2,6 @@
 using Lab3.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Lab3.Data;
 using System;
 using System.Linq;
 
@@ -16,7 +15,7 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<Lab3Context>>()))
         {
-            // Look for any movies.
+            // Look for any books.
             if (context.Book.Any())
             {
                 return;   // DB has been seeded

@@ -47,7 +47,7 @@ namespace Lab3.Controllers
             var bookGenreVM = new BookGenreViewModel
             {
                 Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
-                Movies = await books.ToListAsync()
+                Books = await books.ToListAsync()
             };
 
             return View(await books.ToListAsync());
