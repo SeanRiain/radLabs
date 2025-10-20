@@ -82,7 +82,7 @@ namespace Lab3.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Summary,CoverPage,Publisher,PublisherID,AuthorID")] Book book)
         {
             if (ModelState.IsValid)
             {
