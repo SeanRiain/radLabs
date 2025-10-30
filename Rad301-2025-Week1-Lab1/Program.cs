@@ -8,8 +8,8 @@ namespace Rad301_2025_Week1_Lab1
 {
     public class Category
     {
-        int CategoryID;
-        string Description;
+        public int CategoryID { get; set; }
+        public string Description { get; set; }
 
         public Category(int CategorysID, string CategorysDescription)
         {
@@ -23,15 +23,17 @@ namespace Rad301_2025_Week1_Lab1
         public int ProductID;
         public string Description;
         public int QuantityInStock;
-        public float UnityPrice;
+        public float UnitPrice;
         public int CategoryID;
+        public float TotalValue => QuantityInStock * UnitPrice;
+
 
         public Product(int ProductsID, string ProductsDescription, int ProductsQuantity, float ProductsPrice, int ProductsCategory)
         {
              ProductID = ProductsID;
              Description = ProductsDescription;
              QuantityInStock = ProductsQuantity;
-             UnityPrice = ProductsPrice;
+             UnitPrice = ProductsPrice;
              CategoryID = ProductsCategory; //FK
         }
         //Category ProductCategory;
@@ -40,10 +42,10 @@ namespace Rad301_2025_Week1_Lab1
 
     public class Supplier
     {
-        int SupplierID;
-        string SupplierName;
-        string SupplierAddress1;
-        string SupplierAddress2;
+        public int SupplierID { get; set; }
+        public string SupplierName { get; set; }
+        public string SupplierAddress1 { get; set; }
+        public string SupplierAddress2 { get; set; }
 
         public Supplier(int SuppliersID, string SuppliersName, string SuppliersAddress1, string SuppliersAddress2)
         {
@@ -57,9 +59,9 @@ namespace Rad301_2025_Week1_Lab1
 
     public class SupplierProduct
     {
-        int SupplierID;
-        int ProductID;
-        DateTime DateFirstSupplied;
+        public int SupplierID { get; set; }
+        public int ProductID { get; set; }
+        public DateTime DateFirstSupplied { get; set; }
 
         public SupplierProduct(int SuppliersID, int ProductsID, DateTime TheDateFirstSupplied)
         {
@@ -136,6 +138,53 @@ namespace Rad301_2025_Week1_Lab1
             foreach (Product product in ProductsOver120)
             {
                 Console.WriteLine(product.QuantityInStock);
+            }
+
+            //Products and their total values
+            IEnumerable<Product> ProductValues =
+            from ProductValue in Products
+            select ProductValue; //This works as totalvalue and the logic needed to calculate it was added to the product class
+            Console.WriteLine("Products with Total Value:");
+            foreach (var PV in ProductValues)
+            {
+                Console.WriteLine($"{PV.Description} | Qty: {PV.QuantityInStock} | Price: {PV.UnitPrice:C} | Total: {PV.TotalValue:C}");
+            }
+
+            //Products in the Hardware Category
+            var HardwareProducts =
+            from ProductInstance in Products
+            join SingleCategory in Categories on ProductInstance.CategoryID equals SingleCategory.CategoryID
+            where SingleCategory.Description == "Hardware"
+            select ProductInstance;
+
+            //Products in the Hardware Category, no join
+            var HardwareCategoryID =
+            (from Category in Categories
+             where Category.Description == "Hardware"
+             select Category.CategoryID).FirstOrDefault();
+
+                var HardwareProductsFilter =
+                from Product in Products
+                where Product.CategoryID == HardwareCategoryID //No join needed as this is simply a pre-established var we can compare the CategoryID to
+                select Product;
+
+            foreach (var FilteredProduct in HardwareProductsFilter)
+            {
+                Console.WriteLine($"{FilteredProduct.Description} | Qty: {FilteredProduct.QuantityInStock}");
+            }
+
+            //Suppliers and parts ordered by supplier
+            var SupplierParts =
+            from Supplier in Suppliers
+            join SupplierProduct in SupplierProducts on Supplier.SupplierID equals SupplierProduct.SupplierID
+            join Product in Products on SupplierProduct.ProductID equals Product.ProductID
+            orderby Supplier.SupplierName
+            select new {Supplier.SupplierName, Product.Description};
+
+            Console.WriteLine("Suppliers and their Parts:");
+            foreach (var SupplierPart in SupplierParts)
+            {
+                Console.WriteLine($"{SupplierPart.SupplierName} supplies {SupplierPart.Description}");
             }
         }
     }
