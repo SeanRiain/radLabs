@@ -45,7 +45,7 @@
             @Html.DisplayNameFor(model => model.CoverPage)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CoverPage)
+            <img src="~/images/@Model.CoverPage" alt="@Model.Title Cover" width="150"/>
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Publisher)

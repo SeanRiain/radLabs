@@ -29,7 +29,7 @@ public static class SeedData
                     Price = 7.99M,
 
                     Summary = "nothing good",
-                    CoverPage = "banned in multiple countries",
+                    CoverPage = "stop.jpg",
                     Publisher = "some freak",
                     PublisherID = 14,
                     AuthorID = 13
@@ -42,7 +42,7 @@ public static class SeedData
                     Price = 8.99M,
 
                     Summary = "american foriegn policy",
-                    CoverPage = "some freak",
+                    CoverPage = "hostel.jpg",
                     Publisher = "CIA.Gov",
                     PublisherID = 1982,
                     AuthorID = 411
@@ -55,7 +55,7 @@ public static class SeedData
                     Price = 9.99M,
 
                     Summary = "nothing nice",
-                    CoverPage = "phobos",
+                    CoverPage = "come to belarus.png",
                     Publisher = "poland",
                     PublisherID = 1944,
                     AuthorID = 1933
@@ -68,7 +68,7 @@ public static class SeedData
                     Price = 3.99M,
 
                     Summary = "american domestic policy",
-                    CoverPage = "bald",
+                    CoverPage = "bald.jpg",
                     Publisher = "FBI.Gov",
                     PublisherID = 1880,
                     AuthorID = 1000
