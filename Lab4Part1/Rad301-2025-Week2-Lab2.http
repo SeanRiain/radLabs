@@ -1,0 +1,45 @@
+﻿@HostAddress = https://localhost:7036
+@HostAddress = https://localhost:7036
+
+POST {{HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+   "name":"test",
+   "isComplete":false,
+   "Priority": 12
+}
+
+###
+
+
+GET {{HostAddress}}/todoitems/complete //This is the first
+
+####
+
+GET {{HostAddress}}/todoitems/priority/12 //This is the first
+
+####
+GET {{HostAddress}}/todoitems //This is the first
+
+###
+
+@id=1
+GET {{HostAddress}}/todoitems/{{id}} //This is the third Get Endpoint
+
+###
+
+PUT {{HostAddress}}/todoitems/{{id}}
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "feed fish",
+  "isComplete": false
+}
+
+###
+
+DELETE {{HostAddress}}/todoitems/{{id}}
+
+###

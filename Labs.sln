@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{C673A89A-F507-4354-883D-8EEE04DDA5FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4Part1", "Lab4Part1\Lab4Part1.csproj", "{9461E861-466B-518E-730C-456576D9C8D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C673A89A-F507-4354-883D-8EEE04DDA5FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9461E861-466B-518E-730C-456576D9C8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9461E861-466B-518E-730C-456576D9C8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9461E861-466B-518E-730C-456576D9C8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9461E861-466B-518E-730C-456576D9C8D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
