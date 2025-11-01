@@ -1,0 +1,16 @@
+﻿@Lab2secondProject_HostAddress = https://localhost:7274
+
+POST {{Lab2secondProject_HostAddress}}/Ads
+Content-Type: application/json
+
+{
+  "id":5,
+  "Description":"lorem impsum",
+  "Price": 500
+}
+
+###
+
+GET {{Lab2secondProject_HostAddress}}/Ads
+
+###
