@@ -1,8 +1,12 @@
 using Lab4Part4;
+using Lab4Part4.Data;
 using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<Lab4Context>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
