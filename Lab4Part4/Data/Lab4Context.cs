@@ -13,6 +13,11 @@ namespace Lab4Part4.Data
         {
         }
 
-        public DbSet<Lab4Part4.Models.Product> Product { get; set; } = default!;
+        public DbSet<Lab4Part4.Product> Product { get; set; } = default!;
+        public DbSet<Lab4Part4.Supplier> Supplier { get; set; } = default!;
+
+        public DbSet<Lab4Part4.Category> Category { get; set; } = default!;
+
+
     }
 }
