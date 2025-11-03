@@ -10,6 +10,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Lab5Context>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddDbContext<FluentUserDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("FluentUserDB")));
+
 builder.Services.AddControllersWithViews();
 
 

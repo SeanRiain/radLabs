@@ -33,7 +33,6 @@ namespace Lab5
         public string FirstName { get; set; }
 
         [Column("user_LastName")]
-
         [MaxLength(15)]
         public string LastName { get; set; }
 

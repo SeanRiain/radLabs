@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace Lab5
+namespace Lab5.Models
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum FluentTitle
@@ -31,5 +31,8 @@ namespace Lab5
         public Title title { get; set; }
         public string Biography { get; set; }
         public int Age { get; set; }
+
+        public FluentUserExtension? Extension { get; set; }
+
     }
 }
