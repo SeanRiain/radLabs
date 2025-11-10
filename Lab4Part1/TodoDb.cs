@@ -8,5 +8,13 @@
             : base(options) { }
 
         public DbSet<ToDo> Todos => Set<ToDo>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ToDo>()
+            .Property(Status => Status.Status)
+            .HasConversion<string>();
+        }
+
     }
 }

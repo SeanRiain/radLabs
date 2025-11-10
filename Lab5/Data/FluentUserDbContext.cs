@@ -15,15 +15,15 @@ namespace Lab5.Data
 
         public DbSet<FluentUser> FluentUsers { get; set; }
         //second class goes here
+        public DbSet<FluentUserExtension> FluentUserExtensions { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<FluentUser>().HasKey(u => u.ID);
-            modelBuilder.Entity<FluentUser>().Property(u => u.FirstName).HasMaxLength(15).HasColumnName("user_FirstName");
-            modelBuilder.Entity<FluentUser>().Property(u => u.LastName).HasMaxLength(15).HasColumnName("user_LastName");
-            modelBuilder.Entity<FluentUser>().Property(u => u.LastName).HasMaxLength(15).HasColumnName("user_LastName");
-            modelBuilder.Entity<FluentUser>().Property(u => u.Age).HasColumnName("age_of_user");
+            modelBuilder.Entity<FluentUser>().Property(u => u.FirstName).IsRequired().HasMaxLength(15).HasColumnName("user_FirstName");
+            modelBuilder.Entity<FluentUser>().Property(u => u.LastName).IsRequired().HasMaxLength(15).HasColumnName("user_LastName");
+            modelBuilder.Entity<FluentUser>().Property(u => u.Age).HasMaxLength(200).HasColumnName("age_of_user"); modelBuilder.Entity.HasCheckConstraint("CK_FluentUser_Age", "age_of_user >= 0 AND age_of_user <= 200");
 
             modelBuilder.Entity<FluentUserExtension>().HasKey(d => d.FluentUserID);
 

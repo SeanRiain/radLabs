@@ -34,6 +34,7 @@ namespace Lab4Part4.Controllers
             }
 
             var supplier = await _context.Supplier
+                .Include(supplierinstance => supplierinstance.Products)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (supplier == null)
             {

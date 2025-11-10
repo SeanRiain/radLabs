@@ -28,7 +28,7 @@ namespace Lab5.Models
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Title title { get; set; }
+        public FluentTitle title { get; set; }
         public string Biography { get; set; }
         public int Age { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace Rad301_2025_Week2_Lab2
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
+   
     public enum Status
     {
         NotStarted,

@@ -151,6 +151,8 @@ namespace Rad301_2025_Week1_Lab1
             }
 
             //Products in the Hardware Category
+            //"Join instances of type product and type category where the product's FK is the same as the categorys PK when the category instance's
+            //description element says "hardware"
             var HardwareProducts =
             from ProductInstance in Products
             join SingleCategory in Categories on ProductInstance.CategoryID equals SingleCategory.CategoryID
@@ -158,22 +160,31 @@ namespace Rad301_2025_Week1_Lab1
             select ProductInstance;
 
             //Products in the Hardware Category, no join
+            //No join needed as this is simply a pre-established var we can compare the CategoryID to
+
+            //"Get instances of type category that have the description element of 'hardware', get the row ID of that instance,
+            //then get row instances of type product that have an FK (which is the ID of type category field equal to that of the ID's of rows 
+            //about hardware that were isolated before. Then get use the collection of products as to display information about them."
+
             var HardwareCategoryID =
             (from Category in Categories
              where Category.Description == "Hardware"
              select Category.CategoryID).FirstOrDefault();
 
-                var HardwareProductsFilter =
-                from Product in Products
-                where Product.CategoryID == HardwareCategoryID //No join needed as this is simply a pre-established var we can compare the CategoryID to
-                select Product;
+            var HardwareProductsFilter =
+            from Product in Products
+            where Product.CategoryID == HardwareCategoryID
+            select Product;
 
             foreach (var FilteredProduct in HardwareProductsFilter)
             {
                 Console.WriteLine($"{FilteredProduct.Description} | Qty: {FilteredProduct.QuantityInStock}");
             }
 
+
             //Suppliers and parts ordered by supplier
+            //This essentially creates a mixed table based on the connecting relationships between Suppliers and Products using the already existing
+            //junction table
             var SupplierParts =
             from Supplier in Suppliers
             join SupplierProduct in SupplierProducts on Supplier.SupplierID equals SupplierProduct.SupplierID

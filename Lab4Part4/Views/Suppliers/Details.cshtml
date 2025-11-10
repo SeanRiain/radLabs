@@ -30,6 +30,41 @@
         </dd>
     </dl>
 </div>
+
+<h4>Products Supplied</h4>
+@if (Model.Products != null && Model.Products.Any())
+{
+    <table class="table">
+      <thead>
+          <tr>
+              <th>ProductName</th>
+                <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          @foreach (var product in Model.Products)
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.Description</td>
+
+                </tr>
+            }
+
+
+      </tbody>
+
+
+    </table>
+}
+else
+{
+    <p>This supplier currently has no products listed</p>
+}
+
+
+
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a> |
     <a asp-action="Index">Back to List</a>

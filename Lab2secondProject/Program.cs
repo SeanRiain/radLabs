@@ -65,4 +65,11 @@ app.MapGet("/Ads/Category/{cID}", async (int cID, AdsDb db) =>
             .OrderBy(a => a.Description)
             .ToListAsync());
 
+//Search ads by typpe
+app.MapGet("/Ads/Type/{type}", async (AdType type, AdsDb db) =>
+    await db.Advertisements
+            .Where(ad => ad.Type == type)
+            .ToListAsync());
+
+
 app.Run();
